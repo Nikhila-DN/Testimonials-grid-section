@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    /* Primary */
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Neutral */
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body{
+    font-family: "Barlow Semi Condensed", sans-serif;
+    background-color: var(--Light-grayish-blue);
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 4em auto;
+}
+
+/* User */
+.profile{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+.user-name{
+    font-size: 1.3rem;
+    line-height: 1;
+    color: var(--White);
+}
+.desig{
+    font-size: 1.1rem;
+    color: rgba(255 255 255 / .5);
+}
+img{
+    width: 2rem;
+    border-radius: 50%;
+    border: 1px solid var(--White);
+}
+
+.review{
+    margin-top: 1.3rem;
+    margin-bottom: 1.3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: var(--White);
+}
+
+.discription {
+    color: rgba(255 255 255 / .7);
+}
+
+/* Container */
+.container{
+    margin: 10% auto;
+    width: auto;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, auto));
+    grid-template-areas:
+        "card1 card1 card2 card5"
+        "card3 card4 card4 card5";
+    gap: 1.5rem;
+}
+
+.card {
+    grid-area: card;
+    box-sizing: border-box;
+    background: #733FC8;
+    border-radius: 10px;
+    padding: 2em 1.75em;
+    /* margin: 1em; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.testimonial1 {
+    position: relative;
+    grid-area: card1;
+    background: var(--Moderate-violet);
+    color: var(--White);
+    z-index: 1;
+}
+
+.testimonial1::before{
+    position: absolute;
+    content: url('./images/bg-pattern-quotation.svg');
+    z-index: -1;
+    display: block;
+    top:0;
+    right: 10%;
+   
+}
+
+.testimonial2 {
+    grid-area: card2;
+    background: var(--Very-dark-grayish-blue);
+    color: var(--White);
+}
+
+.testimonial3 {
+    grid-area: card3;
+}
+
+.testimonial4 {
+    grid-area: card4;
+    background: var(--Very-dark-blackish-blue);
+    color: var(--White);
+}
+
+.testimonial5 {
+    grid-area: card5;
+}
+
+.testimonial3,
+.testimonial5 {
+    background: var(--White);
+    color: var(--Very-dark-blackish-blue);
+    
+}
+
+
+.testimonial1 img {
+    border-color: #9e73dc;
+}
+
+.testimonial4 img {
+    border-color: var(--Moderate-violetViolet);
+}
+
+.testimonial3 .user-name,
+.testimonial5 .user-name {
+    color: var(--Light-grayish-blueBlue);
+}
+
+.testimonial3 .desig,
+.testimonial5 .desig {
+    color: var(--Very-dark-blackish-blue);
+}
+
+.testimonial3 .review,
+.testimonial5 .review {
+    color: var(--Very-dark-blackish-blue);
+}
+
+.testimonial3 .discription,
+.testimonial5 .discription {
+    color: var(--Very-dark-grayish-blue);
+}
+
+@media(min-width: 768px) {
+    .container {
+        width: 720px;
+        height: auto;
+    }
+}
+
+@media(min-width: 992px) {
+    .container {
+        width: 960px;
+        height: auto;
+    }
+}
+
+@media(min-width: 1200px) {
+    .container {
+        width: 1140px;
+        height: auto;
+    }
+}
+
+@media(max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:
+        "card1 card4"
+        "card2 card3"
+        "card5 card5";
+    }
+
+}
+
+@media(min-width: 1200px) {
+    main {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .testimonial5 {
+        grid-column: 4;
+        grid-row: 1 / span 2;
+    }
+}
+
+@media (max-width: 480px) {
+    .container{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas:
+        "card1"
+        "card2"
+        "card3"
+        "card4"
+        "card5";
+    }
+    .card{
+        margin: 1em;
+    }
+}
