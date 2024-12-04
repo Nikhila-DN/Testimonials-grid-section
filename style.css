@@ -15,7 +15,7 @@
 body{
     font-family: "Barlow Semi Condensed", sans-serif;
     background-color: var(--Light-grayish-blue);
-    font-size: 1rem;
+    font-size: 13px;
     font-weight: 500;
     margin: 4em auto;
 }
@@ -27,12 +27,12 @@ body{
     gap: 1.5rem;
 }
 .user-name{
-    font-size: 1.3rem;
+    font-size: 1rem;
     line-height: 1;
     color: var(--White);
 }
 .desig{
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: rgba(255 255 255 / .5);
 }
 img{
@@ -42,9 +42,9 @@ img{
 }
 
 .review{
-    margin-top: 1.3rem;
+    margin-top: 1.1rem;
     margin-bottom: 1.3rem;
-    font-size: 2rem;
+    /* font-size: 2rem; */
     font-weight: 600;
     line-height: 1.2;
     color: var(--White);
@@ -57,10 +57,8 @@ img{
 /* Container */
 .container{
     margin: 10% auto;
-    width: auto;
-    align-items: center;
+    width: 80%;
     display: grid;
-    grid-template-columns: repeat(4, minmax(200px, auto));
     grid-template-areas:
         "card1 card1 card2 card5"
         "card3 card4 card4 card5";
@@ -150,26 +148,6 @@ img{
     color: var(--Very-dark-grayish-blue);
 }
 
-@media(min-width: 768px) {
-    .container {
-        width: 720px;
-        height: auto;
-    }
-}
-
-@media(min-width: 992px) {
-    .container {
-        width: 960px;
-        height: auto;
-    }
-}
-
-@media(min-width: 1200px) {
-    .container {
-        width: 1140px;
-        height: auto;
-    }
-}
 
 @media(max-width: 768px) {
     .container {
@@ -178,6 +156,8 @@ img{
         "card1 card4"
         "card2 card3"
         "card5 card5";
+        width: 90%;
+        margin: auto;
     }
 
 }
@@ -188,14 +168,14 @@ img{
         padding-bottom: 0;
     }
 
-    .container {
+    /* .container {
         grid-template-columns: repeat(4, 1fr);
     }
 
     .testimonial5 {
         grid-column: 4;
         grid-row: 1 / span 2;
-    }
+    } */
 }
 
 @media (max-width: 480px) {
